@@ -1,0 +1,42 @@
+import React from 'react';
+
+function Playlist({ songs }) {
+  return (
+    <ul>
+      {songs.map((song, index) => (
+        <li key={index}>
+          {song.title} — {song.artist}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default Playlist;
+
+
+
+const songs = [
+  { title: 'Calm Down',    artist: 'Rema'       },
+  { title: 'Blinding Lights', artist: 'The Weeknd' },
+  { title: 'Levitating',    artist: 'Dua Lipa'   },
+];
+
+<Playlist songs={songs} />
+
+
+
+import React from 'react';
+
+function OrderStatus({ isDelivered }) {
+  return (
+    <div>
+      {isDelivered
+        ? <p>Order Delivered 🎉</p>
+        : <p>Order on the way 🚚</p>
+      }
+    </div>
+  );
+}
+
+export default OrderStatus;
