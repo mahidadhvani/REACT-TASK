@@ -1,0 +1,45 @@
+import React, { useState } from 'react';
+
+function LikeButton() {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>
+        ♥ Like
+      </button>
+      <p>{count} {count === 1 ? 'Like' : 'Likes'}</p>
+    </div>
+  );
+}
+
+export default LikeButton;
+
+
+import React, { useState } from 'react';
+
+function SearchBar() {
+  const [query, setQuery] = useState('');
+
+  const handleChange = (e) => {
+    setQuery(e.target.value); // e.target.value = what user typed
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Search on Flipkart..."
+        value={query}
+        onChange={handleChange}
+      />
+      {query && <p>Searching for: <strong>{query}</strong></p>}
+    </div>
+  );
+}
+
+export default SearchBar;
