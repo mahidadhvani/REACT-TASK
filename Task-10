@@ -1,0 +1,42 @@
+import { createContext } from "react";
+
+const UserContext = createContext({
+  username: "Dhvani",
+  loggedIn: true,
+});
+
+export default UserContext;
+
+import { useContext } from "react";
+import UserContext from "./UserContext";
+
+function Navbar() {
+  const user = useContext(UserContext);
+
+  return (
+    <nav>
+      <h2>Welcome, {user.username}</h2>
+    </nav>
+  );
+}
+
+export default Navbar;
+
+
+import UserContext from "./UserContext";
+import Navbar from "./Navbar";
+
+function App() {
+  const userData = {
+    username: "Dhvani",
+    loggedIn: true,
+  };
+
+  return (
+    <UserContext.Provider value={userData}>
+      <Navbar />
+    </UserContext.Provider>
+  );
+}
+
+export default App;
