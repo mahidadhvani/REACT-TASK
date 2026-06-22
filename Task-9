@@ -1,0 +1,34 @@
+npm install react-router-dom
+
+
+function HomePage() {
+  return (
+    <div>
+      <h1>Welcome to Flipkart Home Page</h1>
+    </div>
+  );
+}
+
+export default HomePage;
+
+
+function DealsPage() {
+  return (
+    <div>
+      <h1>Today's Best Deals</h1>
+    </div>
+  );
+}
+
+export default DealsPage;
+
+
+function CartPage() {
+  return (
+    <div>
+      <h1>Your Shopping Cart</h1>
+    </div>
+  );
+}
+
+export default CartPage;
