@@ -1,0 +1,49 @@
+1---App.jsx----
+
+import React from 'react';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Welcome to My React Zomato App</h1>
+    </div>
+  );
+}
+
+export default App;
+
+
+2-----TrendingSong.js---
+
+import React from 'react';
+
+function TrendingSong() {
+  return (
+    <h2>Trending on Spotify: Calm Down</h2>
+  );
+}
+
+export default TrendingSong;
+
+
+3----App.js-----
+
+import React from 'react';
+import './App.css';
+import TrendingSong from './TrendingSong'; // ← import here
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Welcome to My React Zomato App</h1>
+      <TrendingSong />  // ← use here, below h1
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
