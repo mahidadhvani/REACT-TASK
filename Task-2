@@ -1,0 +1,50 @@
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <h1>Welcome to React JSX!</h1>
+    </div>
+  );
+}
+
+
+export default App;
+
+
+import React from 'react';
+
+function UserGreeting({ username }) {
+  return <h2>Hello, {username}!</h2>;
+}
+
+export default UserGreeting;
+
+
+import React from 'react';
+import UserGreeting from './UserGreeting';
+
+function App() {
+  return (
+    <div>
+      <h1>Welcome to React JSX!</h1>
+      <UserGreeting username="Mahida" />
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+import React, { Component } from 'react';
+
+class UserGreetingClass extends Component {
+  render() {
+    return <h2>Hello, {this.props.username}!</h2>;
+  }
+}
+
+export default UserGreetingClass;
