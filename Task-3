@@ -1,0 +1,81 @@
+import React from 'react';
+
+function ProductCard({ productName, price }) {
+  return (
+    <div style={{
+      border: '1px solid #ddd',
+      borderRadius: '8px',
+      padding: '16px',
+      width: '200px',
+      fontFamily: 'sans-serif'
+    }}>
+      <h3>{productName}</h3>
+      <p>Price: ₹{price}</p>
+    </div>
+  );
+}
+
+export default ProductCard;
+
+
+
+import ProductCard from './ProductCard';
+
+function App() {
+  return (
+    <div>
+      <ProductCard productName="Burger"  price={199} />
+      <ProductCard productName="Pizza"   price={349} />
+      <ProductCard productName="Noodles" price={149} />
+    </div>
+  );
+}
+
+export default App;
+
+
+import React from 'react';
+
+function UserProfile({ username, followers, profilePic }) {
+  return (
+    <div style={{ border: '1px solid #ddd', borderRadius: '12px',
+                  width: '200px', overflow: 'hidden' }}>
+
+      <img
+        src={profilePic}
+        alt="Profile"
+        style={{ width: '100%', height: '120px', objectFit: 'cover' }}
+      />
+
+      <div style={{ padding: '12px' }}>
+        <h3>{username}</h3>
+        <p>{followers} followers</p>
+      </div>
+
+    </div>
+  );
+}
+
+export default UserProfile;
+
+
+
+import React from 'react';
+import PropTypes from 'prop-types'; // ← import
+
+function ProductCard({ productName, price }) {
+  return (
+    <div style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '16px', width: '200px' }}>
+      <h3>{productName}</h3>
+      <p>Price: ₹{price}</p>
+    </div>
+  );
+}
+
+// Validates prop types — shows warning in browser console if wrong
+ProductCard.propTypes = {
+  productName: PropTypes.string.isRequired,
+  price:       PropTypes.number.isRequired
+};
+
+export default ProductCard
